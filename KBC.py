@@ -1,10 +1,5 @@
-import math as m 
-
-# NEED TO CHECK WHY user_input2.lower() in [answer2.lower(), "vaibhav sooryavanshi"]: IS USED
-
-# Checking user Favorite Game
-choice1 = '1. Cricket \n2. Football'
-print(choice1)
+# CHECKING USER CHOICE FOR THE GAME
+print("1. Cricket \n2. Football")
 
 # Taking user choice input
 try:
@@ -13,58 +8,53 @@ except ValueError:
     print("Invalid input! Please enter a number.")
     choice = 0
 
-# Now Checking Whether your Knowledge is updated and you able to crack this.
+# CRICKET 
 if choice == 1:
-    question1 = "Who is called the Cricket God in India?"
-    print(question1)
-    answer1 = "Sachin Tendulkar"
-    user_input = input("Guess the answer: ").strip()
+    print("Who is called the Cricket God in India?")
+    ans1 = "Sachin Tendulkar"
+    user1 = input("Guess the answer: ")
     
-    if user_input.lower() == answer1.lower():
+    # Strip and lower to handle capitalization safely
+    if user1.strip().lower() == ans1.lower():
         print("You got it.")
         print("Hope you are enjoying. Moving to next Question\n")
         
-        question2 = "Who scored the highest runs in the IPL and hit a 15-ball 50 in the year 2026?"
-        print(question2)
-        user_input2 = input("Guess the Cricketer's name: ").strip()
-        answer2 = "Vaibhav Suryanshi" # Formatted as Vaibhav Sooryavanshi in official stats
+        print("Who scored the highest runs in the IPL and hit a 15-ball 50 in the year 2026?")
+        user2 = input("Guess the Cricketer's name: ")
         
-        if user_input2.lower() in [answer2.lower(), "vaibhav sooryavanshi"]:
+        
+        user2_clean = user2.strip().lower()
+        if user2_clean == "vaibhav suryanshi" or user2_clean == "vaibhav sooryavanshi":
             print("You got it.")
             print("Thank You for Playing this game.")
             print("See You soon.")
         else:
             print("You failed. Game Over.")
-            print("Hope you enjoyed. Take Care. See You soon.")
     else:
         print("You failed try again.")
-        print("Hope you enjoyed. Take Care. See You soon.")
 
+# --- FOOTBALL PATH ---
 elif choice == 2:
-    question1 = "Who won the FIFA World Cup 2026?"
-    print(question1)
-    answer1 = "Spain" # Corrected from Portugal; Spain won the 2026 Final
-    user_input = input("Enter the Team name: ").strip()
+    print("Who won the FIFA World Cup 2026?")
+    ans1_fb = "Spain"
+    user1_fb = input("Enter the Team name: ")
     
-    if user_input.lower() == answer1.lower():
+    if user1_fb.strip().lower() == ans1_fb.lower():
         print("You got it.")
         print("Hope you are enjoying. Moving to next Question\n")
         
-        question2 = "Who is the Colombian singer who sang 'Waka Waka'?"
-        print(question2)
-        user_input2 = input("Guess the Singer's name: ").strip()
-        answer2 = "Shakira"
+        print("Who is the Colombian singer who sang 'Waka Waka'?")
+        user2_fb = input("Guess the Singer's name: ")
+        ans2_fb = "Shakira"
         
-        if user_input2.lower() == answer2.lower():
+        if user2_fb.strip().lower() == ans2_fb.lower():
             print("You got it.")
             print("Thank You for Playing this game.")
             print("See You soon.")
         else:
             print("You failed. Game Over.")
-            print("Hope you enjoyed. Take Care. See You soon.")
     else:
-        print("You failed. Game Over.")
-        print("Hope you enjoyed. Take Care. See You soon.")
-        
+        print("You failed try again.")
+
 else:
-    print("Goodbye!")
+    print("Wrong choice selected.")
